@@ -14,7 +14,15 @@ BOT_NAME = 'first_spider'
 SPIDER_MODULES = ['first_spider.spiders']
 NEWSPIDER_MODULE = 'first_spider.spiders'
 
-LOG_LEVEL = 'WARNING'
+# LOG_LEVEL = 'WARNING'
+
+ITEM_PIPELINES = {'first_spider.pipelines.MongoPipline': 100, }
+
+# MONGODB_SERVER = 'localhost'
+# MONGODB_PORT = '27017'
+# MONGODB_DB = "runoob"
+# MONGODB_COLLECTION = 'scrapy_test'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'first_spider (+http://www.yourdomain.com)'
 

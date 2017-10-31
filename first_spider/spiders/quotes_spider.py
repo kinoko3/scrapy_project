@@ -24,6 +24,8 @@ class QuotesSpider(scrapy.Spider):
         with open(filename, 'wb') as f:
             f.write(response.body)
         self.log('Saved file %s' % filename)
+
+
 '''
 一个使用回调函数的例子，先使用POST登录网站
 def start_requests(self):
