@@ -1,0 +1,13 @@
+书名：//*[@id="wrapper"]/h1/span/text()
+作者:
+出版社(有链接状态下)：//*[@id="info"]/span[1]/a/text()
+出版年(re):response.xpath('//*[@id="info"]').re('(?<=出版社:</span> ).*?(?=<br>)')
+页数(re):~
+
+
+
+评分: //*[@id="interest_sectl"]/div/div[2]/strong/text()
+
+内容简介: //*[@id="link-report"]/div[1]/div/p/text()
+无评分的书丢掉丢掉
+

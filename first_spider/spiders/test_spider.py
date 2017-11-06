@@ -15,6 +15,6 @@ class TestSpider(scrapy.Spider):
         item = FirstSpiderItem()
         item['title'] = a  # 返回一个字典，和BSON的格式相符
         # self.logger.warning(item)
-        return item
+        yield item
 
 

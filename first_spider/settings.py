@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'first_spider.spiders'
 
 # LOG_LEVEL = 'WARNING'
 
-ITEM_PIPELINES = {'first_spider.pipelines.MongoPipline': 100, }
+# ITEM_PIPELINES = {'first_spider.pipelines.MongoPipline': 100, }
 
 # MONGODB_SERVER = 'localhost'
 # MONGODB_PORT = '27017'
@@ -47,10 +47,12 @@ ROBOTSTXT_OBEY = True
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-#DEFAULT_REQUEST_HEADERS = {
-#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-#   'Accept-Language': 'en',
-#}
+DEFAULT_REQUEST_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.6,en;q=0.4,ja;q=0.',
+}
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html

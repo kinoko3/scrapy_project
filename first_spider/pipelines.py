@@ -19,6 +19,7 @@ class MongoPipline(object):
         self.db = None
 
     def open_spider(self, spider):
+        
         self.client = pymongo.MongoClient(self.mongo_server, self.port)
         self.db = self.client[self.mongo_db]
 
