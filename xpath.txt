@@ -3,8 +3,11 @@
 出版社(有链接状态下)：//*[@id="info"]/span[1]/a/text()
 出版年(re):response.xpath('//*[@id="info"]').re('(?<=出版社:</span> ).*?(?=<br>)')
 页数(re):~
+a = re.findall('/tag/日本文学\?start=\d+\&type=S', string)
 
+'subject/\d+/'
 
+/\d+/.+ 去除杂乱网址
 
 评分: //*[@id="interest_sectl"]/div/div[2]/strong/text()
 
