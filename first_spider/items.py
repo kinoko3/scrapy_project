@@ -22,3 +22,14 @@ class DoubanBookStatusItem(scrapy.Item):
     year = scrapy.Field()  # 出版年份
     price = scrapy.Field()  # 价格
     pages = scrapy.Field()  # 页数
+    # 下面是评分
+    grade = scrapy.Field()
+
+
+class TagType(scrapy.Item):
+    literature = scrapy.Field()   # 文学
+    popular = scrapy.Field()  # 流行
+    culture = scrapy.Field()  # 文化
+    life = scrapy.Field()  # 生活
+    manage = scrapy.Field()  # 经管
+    science = scrapy.Field()  # 科技

@@ -18,9 +18,9 @@ NEWSPIDER_MODULE = 'first_spider.spiders'
 
 # ITEM_PIPELINES = {'first_spider.pipelines.MongoPipline': 100, }
 
-# MONGODB_SERVER = 'localhost'
-# MONGODB_PORT = '27017'
-# MONGODB_DB = "runoob"
+MONGODB_SERVER = 'localhost'
+MONGODB_PORT = 27017
+MONGODB_DB = "runoob"
 # MONGODB_COLLECTION = 'scrapy_test'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -41,14 +41,14 @@ ROBOTSTXT_OBEY = True
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.3408.400 QQBrowser/9.6.12028.400',
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.6,en;q=0.4,ja;q=0.',
@@ -62,9 +62,10 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'first_spider.middlewares.MyCustomDownloaderMiddleware': 543,
-#}
+# 下载中间件
+# DOWNLOADER_MIDDLEWARES = {
+#    'first_spider.middlewares.RotateUserAgentMiddleware': 400,
+# }
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html

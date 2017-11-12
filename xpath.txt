@@ -1,8 +1,10 @@
 书名：//*[@id="wrapper"]/h1/span/text()
-作者:
-出版社(有链接状态下)：//*[@id="info"]/span[1]/a/text()
+作者: writer = response.xpath('//*[@id="info"]/a[1]/text()').extract()[0]
+     writer = re.sub('\s+', '', writer)
+出版社：//*[@id="info"]/span[1]/a/text()
 出版年(re):response.xpath('//*[@id="info"]').re('(?<=出版社:</span> ).*?(?=<br>)')
 页数(re):~
+价格
 a = re.findall('/tag/日本文学\?start=\d+\&type=S', string)
 
 'subject/\d+/'
@@ -13,4 +15,7 @@ a = re.findall('/tag/日本文学\?start=\d+\&type=S', string)
 
 内容简介: //*[@id="link-report"]/div[1]/div/p/text()
 无评分的书丢掉丢掉
+
+全部标签：response.xpath('//*[@id="content"]/div/div[1]/div[2]/div/table/tbody/tr/td/a/@href').extract()
+
 

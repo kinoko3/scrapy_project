@@ -11,17 +11,24 @@ import pymongo
 class MongoPipline(object):
     collection_name = 'scrapy_items'
 
-    def __init__(self):
-        self.mongo_server = 'localhost'
-        self.mongo_db = 'runoob'
-        self.port = 27017
+    def __init__(self, mongo_server, port, db_name):
+        self.mongo_server = mongo_server
+        self.port = port
+        self.db_name = db_name
         self.client = None
         self.db = None
 
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            mongo_server=crawler.settings.get('MONGODB_SERVER'),
+            port=crawler.settings.get('MONGODB_PORT'),
+            db_name=crawler.settings.get('MONGODB_DB'),
+        )
+
     def open_spider(self, spider):
-        
         self.client = pymongo.MongoClient(self.mongo_server, self.port)
-        self.db = self.client[self.mongo_db]
+        self.db = self.client[self.db_name]
 
     def close_spider(self, spider):
         self.client.close()
