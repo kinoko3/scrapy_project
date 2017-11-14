@@ -7,20 +7,25 @@ from first_spider.items import DoubanBookStatusItem
 class MainDoubanBookSpider(CrawlSpider):
     name = "DoubanBook"
     allowed_domains = ["book.douban.com"]
-    start_urls = [
-        'https://book.douban.com/tag/%E6%97%A5%E6%9C%AC%E6%96%87%E5%AD%A6?type=S'
-    ]
     rules = (
         # restrict_xpaths=装着link的一个标签树，不需要精准,对一页中的全部书籍的链接进行回调分析
         # Rule(LinkExtractor(restrict_xpaths=('//*[@id="subject_list"]/ul'),
-                           # deny=('/\d+/.+')
-                           # ), callback='parse_item'),  # 回调函数返回一个response
-        Rule(LinkExtractor(restrict_xpaths=('//*[@id="subject_list"]/div[2]/span[4]/a'), deny=('/tag/日本文学\?start=40\&type=S'))),
-        Rule(LinkExtractor(restrict_xpaths=('//*[@id="subject_list"]/ul'),
-                           deny=('/\d+/.+')
-                           ), callback='parse_item'),
-
+        # deny=('/\d+/.+')
+        # ), callback='parse_item'),  # 回调函数返回一个response
+        Rule(LinkExtractor(restrict_xpaths=(
+            '//*[@id="subject_list"]/div[2]/span[4]/a'), deny=(
+            '/tag/\w+\?start=20\&type=T'))),
+        Rule(LinkExtractor(restrict_xpaths=(
+            '//*[@id="subject_list"]/ul'),
+            deny=(
+                '/\d+/.+')
+        ),
+            callback='parse_item'),
     )
+
+    def __init__(self, start_url):
+        self.start_urls = start_url
+        super().__init__()
 
     def parse_item(self, response):
         item = DoubanBookStatusItem()

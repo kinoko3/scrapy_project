@@ -13,7 +13,7 @@ def urls():
         return url
 
 
-url_list = urls()
+url_list = urls()   # 返回一个list
 
 config = configparser.ConfigParser()    #读取配置
 
@@ -23,7 +23,10 @@ settings = get_project_settings()   # 获取当前目录下的settings的配置
 configure_logging(settings)     # 日志等级获取
 runner = CrawlerRunner(settings)    #
 
-runner.crawl(MainDoubanBookSpider())
+for urls_ in url_list:
+    URL = []
+    URL.append(urls_)
+    runner.crawl(MainDoubanBookSpider, start_url=URL)
 
 d = runner.join()
 d.addBoth(lambda _: reactor.stop())
