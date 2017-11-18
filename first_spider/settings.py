@@ -16,9 +16,9 @@ NEWSPIDER_MODULE = 'first_spider.spiders'
 
 # LOG_LEVEL = 'WARNING'
 
-# ITEM_PIPELINES = {'first_spider.pipelines.MongoPipline': 100, }
+ITEM_PIPELINES = {'first_spider.pipelines.MongoPipline': 100, }
 
-MONGODB_SERVER = 'localhost'
+MONGODB_SERVER = '120.78.213.43'
 MONGODB_PORT = 27017
 MONGODB_DB = "runoob"
 # MONGODB_COLLECTION = 'scrapy_test'
@@ -48,7 +48,7 @@ COOKIES_ENABLED = False
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.3408.400 QQBrowser/9.6.12028.400',
+    'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.6,en;q=0.4,ja;q=0.',
@@ -81,9 +81,9 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
-AUTOTHROTTLE_ENABLED = True
+# AUTOTHROTTLE_ENABLED = True
 # The initial download delay
-AUTOTHROTTLE_START_DELAY = 2
+# AUTOTHROTTLE_START_DELAY = 2
 # The maximum download delay to be set in case of high latencies
 #AUTOTHROTTLE_MAX_DELAY = 60
 # The average number of requests Scrapy should be sending in parallel to

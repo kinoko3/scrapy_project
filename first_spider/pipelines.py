@@ -34,5 +34,19 @@ class MongoPipline(object):
         self.client.close()
 
     def process_item(self, item, spider):
-        self.db[self.collection_name].insert_one(dict(item))
+        # self.db[self.collection_name].insert_one(dict(item))
+        self.db[self.collection_name].update({
+                'name': item['name'],
+                'pages': item['pages'],
+                'year': item['year'],
+                'writer': item['writer'],
+                'price': item['price']
+            }, {
+                '$push': {
+                    'comments': {
+                        '$each': item['comments']
+                    }
+                },
+            },
+                upsert=True)
         return item

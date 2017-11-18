@@ -16,6 +16,7 @@ class FirstSpiderItem(scrapy.Item):
 
 class DoubanBookStatusItem(scrapy.Item):
     # 豆瓣读书暂定书本状态字段
+    url = scrapy.Field()
     name = scrapy.Field()  # 书名
     writer = scrapy.Field()  # 作者
     press = scrapy.Field()  # 出版社
@@ -23,7 +24,8 @@ class DoubanBookStatusItem(scrapy.Item):
     price = scrapy.Field()  # 价格
     pages = scrapy.Field()  # 页数
     # 下面是评分
-    grade = scrapy.Field()
+    # grade = scrapy.Field()
+    comments = scrapy.Field()
 
 
 class TagType(scrapy.Item):
@@ -33,9 +35,3 @@ class TagType(scrapy.Item):
     life = scrapy.Field()  # 生活
     manage = scrapy.Field()  # 经管
     science = scrapy.Field()  # 科技
-
-
-class Comments(scrapy.Item):
-    stat = scrapy.Field()   # 评级
-    time = scrapy.Field()   # 评价时间
-    user_code = scrapy.Field()  # 用户代码
