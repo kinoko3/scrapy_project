@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'first_spider.spiders'
 
 # LOG_LEVEL = 'WARNING'
 
-ITEM_PIPELINES = {'first_spider.pipelines.MongoPipline': 100, }
+# ITEM_PIPELINES = {'first_spider.pipelines.MongoPipline': 100, }
 
 MONGODB_SERVER = '120.78.213.43'
 MONGODB_PORT = 27017

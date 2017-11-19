@@ -44,10 +44,12 @@ class MainDoubanBookSpider(CrawlSpider):
         c = {}
         a = re.findall('(?<=<span class=").*?(?=" title)', stri)
         b = re.findall('(?<=<a href="https://www.douban.com/people/).*?(?=/">)', stri)
+        d = re.findall('(?<=<span>).*?(?=</span>)', stri)
         if a == []:
             a.append('')
         c['user'] = b[0]
         c['star'] = a[0][18:-7]
+        c['time'] = d[0]
         return c
 
     def parse_item(self, response):
@@ -62,7 +64,6 @@ class MainDoubanBookSpider(CrawlSpider):
         item['year'] = re.findall('(?<=<span class="pl">出版年:</span> ).*?(?=<br>)', Book[0])[0]
         item['price'] = re.findall('(?<=<span class="pl">定价:</span> ).*?(?=<br>)', Book[0])[0]
         item['pages'] = re.findall('(?<=<span class="pl">页数:</span> ).*?(?=<br>)', Book[0])[0]
-
 
         yield item
 
