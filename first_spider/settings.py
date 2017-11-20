@@ -16,11 +16,13 @@ NEWSPIDER_MODULE = 'first_spider.spiders'
 
 # LOG_LEVEL = 'WARNING'
 
-# ITEM_PIPELINES = {'first_spider.pipelines.MongoPipline': 100, }
+ITEM_PIPELINES = {'first_spider.pipelines.MongoPipline': 100, }
 
-MONGODB_SERVER = '120.78.213.43'
+MONGODB_SERVER = ''
 MONGODB_PORT = 27017
-MONGODB_DB = "runoob"
+MONGODB_DB = ''
+MONGODB_USER = ''
+MONGODB_USER_PWD = ''
 # MONGODB_COLLECTION = 'scrapy_test'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -81,9 +83,9 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
-# AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = True
 # The initial download delay
-# AUTOTHROTTLE_START_DELAY = 2
+AUTOTHROTTLE_START_DELAY = 2
 # The maximum download delay to be set in case of high latencies
 #AUTOTHROTTLE_MAX_DELAY = 60
 # The average number of requests Scrapy should be sending in parallel to
